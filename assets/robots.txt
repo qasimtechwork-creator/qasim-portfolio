@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://muse.ai/s/portfolio-website-xvw6oxcxz49xqxqn/assets/sitemap.xml

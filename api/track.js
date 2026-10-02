@@ -22,25 +22,14 @@ export default async function handler(req, res) {
       const day = now.toISOString().slice(0, 10);
       const prefix = `events/${day}-`;
       const { blobs } = await list({ prefix });
-      let pathname;
-      let events = [];
-      if (blobs.length) {
-        pathname = blobs[0].pathname;
-        try {
-          const got = await get(pathname, { access: 'private' });
-          if (got && got.stream) {
-            const text = await new Response(got.stream).text();
-            const parsed = JSON.parse(text);
-            if (Array.isArray(parsed)) events = parsed;
-          }
-        } catch (e) { /* start fresh below */ }
-      } else {
-        pathname = `events/${day}-${crypto.randomBytes(4).toString('hex')}.json`;
-      }
+      let pathname = blobs.length
+        ? blobs[0].pathname
+        : `events/${day}-${crypto.randomBytes(4).toString('hex')}.json`;
       const ip = String(req.headers['x-forwarded-for'] || '').split(',')[0].trim();
       const ua = String(req.headers['user-agent'] || '').slice(0, 140);
       const visitor = crypto.createHash('sha256').update(`${ip}|${ua}|${day}`).digest('hex').slice(0, 16);
-      events.push({
+      const record = {
+        eid: crypto.randomBytes(8).toString('hex'),
         ts: now.toISOString(),
         t: ev.t,
         p: String(ev.p || '').slice(0, 300),
@@ -49,14 +38,40 @@ export default async function handler(req, res) {
         r: String(ev.r || '').slice(0, 300),
         ctry: String(req.headers['x-vercel-ip-country'] || ''),
         v: visitor
-      });
-      if (events.length > 30000) events = events.slice(-30000);
-      await put(pathname, JSON.stringify(events), {
-        access: 'private',
-        addRandomSuffix: false,
-        allowOverwrite: true,
-        contentType: 'application/json'
-      });
+      };
+      // Read-modify-write with verify-and-retry: Blob reads can lag a fresh write
+      // by a moment, so confirm the event actually landed and retry if it did not.
+      let stored = false;
+      for (let attempt = 0; attempt < 4 && !stored; attempt += 1) {
+        let events = [];
+        try {
+          const got = await get(pathname, { access: 'private' });
+          if (got && got.stream) {
+            const parsed = JSON.parse(await new Response(got.stream).text());
+            if (Array.isArray(parsed)) events = parsed;
+          }
+        } catch (e) { /* first write of the day */ }
+        if (events.some((e) => e.eid === record.eid)) {
+          stored = true;
+          break;
+        }
+        events.push(record);
+        if (events.length > 30000) events = events.slice(-30000);
+        await put(pathname, JSON.stringify(events), {
+          access: 'private',
+          addRandomSuffix: false,
+          allowOverwrite: true,
+          contentType: 'application/json'
+        });
+        try {
+          const check = await get(pathname, { access: 'private' });
+          if (check && check.stream) {
+            const arr = JSON.parse(await new Response(check.stream).text());
+            if (Array.isArray(arr) && arr.some((e) => e.eid === record.eid)) stored = true;
+          }
+        } catch (e) { /* verify again next attempt */ }
+        if (!stored) await new Promise((r) => setTimeout(r, 600 * (attempt + 1)));
+      }
     }
   } catch (e) {
     // Swallow: analytics must never affect the site.

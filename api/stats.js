@@ -1,4 +1,4 @@
-import { list } from '@vercel/blob';
+import { list, get } from '@vercel/blob';
 import { verifySession } from './_auth.js';
 
 // Aggregates the daily event files written by /api/track into dashboard stats.
@@ -53,9 +53,10 @@ export default async function handler(req, res) {
       for (const blob of byDay.get(day)) {
         let events = [];
         try {
-          const r = await fetch(blob.url);
-          if (r.ok) {
-            const parsed = await r.json();
+          const got = await get(blob.pathname, { access: 'private' });
+          if (got && got.stream) {
+            const text = await new Response(got.stream).text();
+            const parsed = JSON.parse(text);
             if (Array.isArray(parsed)) events = parsed;
           }
         } catch (e) { /* skip unreadable day file */ }

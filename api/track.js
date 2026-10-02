@@ -1,4 +1,4 @@
-import { put, list } from '@vercel/blob';
+import { put, list, get } from '@vercel/blob';
 import crypto from 'crypto';
 
 // Receives lightweight analytics beacons from /assets/tracker.js.
@@ -27,9 +27,10 @@ export default async function handler(req, res) {
       if (blobs.length) {
         pathname = blobs[0].pathname;
         try {
-          const r = await fetch(blobs[0].url);
-          if (r.ok) {
-            const parsed = await r.json();
+          const got = await get(pathname, { access: 'private' });
+          if (got && got.stream) {
+            const text = await new Response(got.stream).text();
+            const parsed = JSON.parse(text);
             if (Array.isArray(parsed)) events = parsed;
           }
         } catch (e) { /* start fresh below */ }
@@ -51,7 +52,7 @@ export default async function handler(req, res) {
       });
       if (events.length > 30000) events = events.slice(-30000);
       await put(pathname, JSON.stringify(events), {
-        access: 'public',
+        access: 'private',
         addRandomSuffix: false,
         allowOverwrite: true,
         contentType: 'application/json'

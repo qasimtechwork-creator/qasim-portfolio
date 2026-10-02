@@ -2282,5 +2282,6 @@
       if('IntersectionObserver' in window&&!reduceMotion){var observer=new IntersectionObserver(function(entries){entries.forEach(function(entry){if(entry.isIntersecting){entry.target.classList.add('visible');observer.unobserve(entry.target)}})},{threshold:.08});document.querySelectorAll('.reveal').forEach(function(el){observer.observe(el)})}else{document.querySelectorAll('.reveal').forEach(function(el){el.classList.add('visible')})}
     })();
   </script>
+<script src="/assets/tracker.js" defer></script>
 </body>
 </html>

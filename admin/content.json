@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-02T09:02:26.140529+00:00",
+  "generatedAt": "2026-10-03T00:03:01.051955+00:00",
   "videos": [
     {
       "id": "Dd5i9_ByRpU",
@@ -424,6 +424,11 @@
       "path": "/assets/articles/free-ai-tools-2026.html"
     },
     {
+      "slug": "freelancer-ai-kit-free-tools-2026",
+      "title": "The Freelancer AI Kit: Free AI Tools That Help You Deliver Faster in 2026",
+      "path": "/assets/articles/freelancer-ai-kit-free-tools-2026.html"
+    },
+    {
       "slug": "how-much-does-youtube-thumbnail-cost",
       "title": "YouTube Thumbnail Cost in 2026: Designer Pricing Guide",
       "path": "/assets/articles/how-much-does-youtube-thumbnail-cost.html"
@@ -467,6 +472,11 @@
       "slug": "one-stop-free-ai-toolkit-creators",
       "title": "The One-Stop Free AI Toolkit for Creators in 2026",
       "path": "/assets/articles/one-stop-free-ai-toolkit-creators.html"
+    },
+    {
+      "slug": "real-ai-voice-tools-voiceover-dubbing-2026",
+      "title": "Real-Sounding AI Voices: Free AI Voice Tools for Voiceovers, Dubbing and Narration in 2026",
+      "path": "/assets/articles/real-ai-voice-tools-voiceover-dubbing-2026.html"
     },
     {
       "slug": "seven-free-ai-tools-2026",
@@ -531,6 +541,6 @@
   ],
   "counts": {
     "videos": 40,
-    "articles": 33
+    "articles": 35
   }
 }

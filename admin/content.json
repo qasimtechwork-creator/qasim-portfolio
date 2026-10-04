@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-03T06:44:04.731183+00:00",
+  "generatedAt": "2026-10-04T00:01:35.209721+00:00",
   "videos": [
     {
       "id": "DeBEmauBVEE",
@@ -374,7 +374,7 @@
   "articles": [
     {
       "slug": "50-google-flow-commands",
-      "title": "50 Google Flow Commands for Cinematic AI Product Videos",
+      "title": "50 Google Flow Commands for Cinematic AI Videos",
       "path": "/assets/articles/50-google-flow-commands.html"
     },
     {
@@ -389,7 +389,7 @@
     },
     {
       "slug": "ai-voice-cloning-2026",
-      "title": "AI Voice Cloning for Creators: Best Tools in 2026",
+      "title": "AI Voice Cloning for Creators: Best Tools 2026",
       "path": "/assets/articles/ai-voice-cloning-2026.html"
     },
     {
@@ -418,6 +418,11 @@
       "path": "/assets/articles/chatgpt-vs-claude-vs-gemini-which-ai-to-use.html"
     },
     {
+      "slug": "click-booster-kit-free-ai-tools-thumbnails-titles-video-ideas-2026",
+      "title": "Click Booster Kit: Free AI Tools for Thumbnails, Titles and Video Ideas That Win the Click in 2026",
+      "path": "/assets/articles/click-booster-kit-free-ai-tools-thumbnails-titles-video-ideas-2026.html"
+    },
+    {
       "slug": "faceless-youtube-videos-free-ai-tools",
       "title": "Faceless YouTube Videos with Free AI Tools (2026)",
       "path": "/assets/articles/faceless-youtube-videos-free-ai-tools.html"
@@ -434,7 +439,7 @@
     },
     {
       "slug": "freelancer-ai-kit-free-tools-2026",
-      "title": "The Freelancer AI Kit: Free AI Tools That Help You Deliver Faster in 2026",
+      "title": "The Freelancer AI Kit: Free AI Tools for 2026",
       "path": "/assets/articles/freelancer-ai-kit-free-tools-2026.html"
     },
     {
@@ -474,32 +479,37 @@
     },
     {
       "slug": "look-professional-free-ai-tools-2026",
-      "title": "How to Look Professional for Free with AI Tools in 2026",
+      "title": "How to Look Professional with Free AI Tools",
       "path": "/assets/articles/look-professional-free-ai-tools-2026.html"
     },
     {
+      "slug": "my-daily-ai-stack-free-tools-content-business-2026",
+      "title": "My Daily AI Stack: The Free Tools I Use Every Day to Run a Content Business in 2026",
+      "path": "/assets/articles/my-daily-ai-stack-free-tools-content-business-2026.html"
+    },
+    {
       "slug": "one-stop-free-ai-toolkit-creators",
-      "title": "The One-Stop Free AI Toolkit for Creators in 2026",
+      "title": "One-Stop Free AI Toolkit for Creators (2026)",
       "path": "/assets/articles/one-stop-free-ai-toolkit-creators.html"
     },
     {
       "slug": "real-ai-voice-tools-voiceover-dubbing-2026",
-      "title": "Real-Sounding AI Voices: Free AI Voice Tools for Voiceovers, Dubbing and Narration in 2026",
+      "title": "Real AI Voice Tools for Voiceovers and Dubbing",
       "path": "/assets/articles/real-ai-voice-tools-voiceover-dubbing-2026.html"
     },
     {
       "slug": "seven-free-ai-tools-2026",
-      "title": "7 Free AI Tools That Replace Expensive Software in 2026",
+      "title": "7 Free AI Tools That Replace Expensive Software",
       "path": "/assets/articles/seven-free-ai-tools-2026.html"
     },
     {
       "slug": "start-free-today-ai-business-2026",
-      "title": "Start Your Online Business Today with Free AI Tools in 2026",
+      "title": "Start an Online Business with Free AI Tools",
       "path": "/assets/articles/start-free-today-ai-business-2026.html"
     },
     {
       "slug": "ten-free-ai-tools-small-youtube-channels",
-      "title": "10 Free AI Tools for Small YouTube Channels in 2026",
+      "title": "10 Free AI Tools for Small YouTube Channels",
       "path": "/assets/articles/ten-free-ai-tools-small-youtube-channels.html"
     },
     {
@@ -524,7 +534,7 @@
     },
     {
       "slug": "write-scripts-captions-blogs-free-ai",
-      "title": "Write Scripts, Captions and Blogs for Free with AI (2026)",
+      "title": "Write Scripts, Captions and Blogs Free with AI",
       "path": "/assets/articles/write-scripts-captions-blogs-free-ai.html"
     },
     {
@@ -544,12 +554,12 @@
     },
     {
       "slug": "youtuber-ai-pack-2026-free-tools",
-      "title": "The YouTuber AI Pack: Best Free AI Tools for YouTubers in 2026",
+      "title": "The YouTuber AI Pack: Free AI Tools (2026)",
       "path": "/assets/articles/youtuber-ai-pack-2026-free-tools.html"
     }
   ],
   "counts": {
     "videos": 41,
-    "articles": 35
+    "articles": 37
   }
 }

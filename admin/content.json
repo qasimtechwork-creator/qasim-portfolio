@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-04T06:44:02.408242+00:00",
+  "generatedAt": "2026-10-05T00:03:03.682997+00:00",
   "videos": [
     {
       "id": "DeBEmauBVEE",
@@ -423,6 +423,11 @@
       "path": "/assets/articles/click-booster-kit-free-ai-tools-thumbnails-titles-video-ideas-2026.html"
     },
     {
+      "slug": "ditch-paid-apps-free-ai-replacements-2026",
+      "title": "Ditch Paid Apps: Free AI Replacements for Every Expensive Creator Tool in 2026",
+      "path": "/assets/articles/ditch-paid-apps-free-ai-replacements-2026.html"
+    },
+    {
       "slug": "faceless-youtube-videos-free-ai-tools",
       "title": "Faceless YouTube Videos with Free AI Tools (2026)",
       "path": "/assets/articles/faceless-youtube-videos-free-ai-tools.html"
@@ -441,6 +446,11 @@
       "slug": "freelancer-ai-kit-free-tools-2026",
       "title": "The Freelancer AI Kit: Free AI Tools for 2026",
       "path": "/assets/articles/freelancer-ai-kit-free-tools-2026.html"
+    },
+    {
+      "slug": "hidden-gems-free-ai-apps-creators-2026",
+      "title": "Hidden Gems: 8 Free AI Apps Most Creators Have Never Tried in 2026",
+      "path": "/assets/articles/hidden-gems-free-ai-apps-creators-2026.html"
     },
     {
       "slug": "how-much-does-youtube-thumbnail-cost",
@@ -560,6 +570,6 @@
   ],
   "counts": {
     "videos": 41,
-    "articles": 37
+    "articles": 39
   }
 }

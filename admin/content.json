@@ -1,6 +1,15 @@
 {
-  "generatedAt": "2026-10-06T01:09:33.913354+00:00",
+  "generatedAt": "2026-10-06T05:10:43.864793+00:00",
   "videos": [
+    {
+      "id": "DeGs3CSBJWr",
+      "file": "reel-DeGs3CSBJWr.mp4",
+      "title": "1 AI Tool to REPLACE Them All! 🤯 (The Ultimate Higgsfield Alternative)",
+      "url": "https://www.instagram.com/reel/DeGs3CSBJWr/",
+      "likes": 2,
+      "comments": 2,
+      "created_at": "2026-10-05 00:45:01"
+    },
     {
       "id": "DeENKa9pwS1",
       "file": "reel-DeENKa9pwS1.mp4",
@@ -588,7 +597,7 @@
     }
   ],
   "counts": {
-    "videos": 42,
+    "videos": 43,
     "articles": 41
   }
 }

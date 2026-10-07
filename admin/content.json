@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-06T06:44:06.744096+00:00",
+  "generatedAt": "2026-10-07T01:02:39.600278+00:00",
   "videos": [
     {
       "id": "DeGs3CSBJWr",
@@ -526,6 +526,11 @@
       "path": "/assets/articles/my-daily-ai-stack-free-tools-content-business-2026.html"
     },
     {
+      "slug": "one-photo-to-video-ad-ai-tools-2026",
+      "title": "One Photo to a Full Video Ad: How AI Video Tools Turn Images Into Commercials in 2026",
+      "path": "/assets/articles/one-photo-to-video-ad-ai-tools-2026.html"
+    },
+    {
       "slug": "one-stop-free-ai-toolkit-creators",
       "title": "One-Stop Free AI Toolkit for Creators (2026)",
       "path": "/assets/articles/one-stop-free-ai-toolkit-creators.html"
@@ -566,6 +571,11 @@
       "path": "/assets/articles/video-editing-tips-beginners.html"
     },
     {
+      "slug": "which-ai-tool-saves-creators-most-time-2026",
+      "title": "Which AI Tool Saves Creators the Most Time in 2026? An Honest Comparison",
+      "path": "/assets/articles/which-ai-tool-saves-creators-most-time-2026.html"
+    },
+    {
       "slug": "why-youtubers-outsource-video-editing",
       "title": "Why YouTubers Outsource Video Editing in 2026",
       "path": "/assets/articles/why-youtubers-outsource-video-editing.html"
@@ -598,6 +608,6 @@
   ],
   "counts": {
     "videos": 43,
-    "articles": 41
+    "articles": 43
   }
 }

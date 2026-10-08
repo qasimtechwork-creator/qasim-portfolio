@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-07T06:44:03.474999+00:00",
+  "generatedAt": "2026-10-08T04:47:55.043652+00:00",
   "videos": [
     {
       "id": "DeGs3CSBJWr",
@@ -401,6 +401,11 @@
       "path": "/assets/articles/ai-ugc-ads-2026.html"
     },
     {
+      "slug": "ai-ugc-ads-create-sell-2026",
+      "title": "AI UGC Ads: How Creators Make and Sell Product Ads From a Single Photo in 2026",
+      "path": "/assets/articles/ai-ugc-ads-create-sell-2026.html"
+    },
+    {
       "slug": "ai-video-editing-premiere-pro-2026",
       "title": "AI Video Editing in Premiere Pro: 2026 Guide",
       "path": "/assets/articles/ai-video-editing-premiere-pro-2026.html"
@@ -536,6 +541,11 @@
       "path": "/assets/articles/one-stop-free-ai-toolkit-creators.html"
     },
     {
+      "slug": "prompt-like-pro-ai-2026",
+      "title": "Prompt Like a Pro: The Simple Framework That Turns Average AI Output Into Professional Results in 2026",
+      "path": "/assets/articles/prompt-like-pro-ai-2026.html"
+    },
+    {
       "slug": "real-ai-voice-tools-voiceover-dubbing-2026",
       "title": "Real AI Voice Tools for Voiceovers and Dubbing",
       "path": "/assets/articles/real-ai-voice-tools-voiceover-dubbing-2026.html"
@@ -608,6 +618,6 @@
   ],
   "counts": {
     "videos": 43,
-    "articles": 43
+    "articles": 45
   }
 }

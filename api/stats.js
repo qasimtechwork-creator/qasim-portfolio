@@ -32,7 +32,7 @@ export default async function handler(req, res) {
     const byDay = new Map(); // day -> blob[]
     let trackedSince = null;
     for (const b of blobs) {
-      const m = /events\/(\d{4}-\d{2}-\d{2})-/.exec(b.pathname);
+      const m = /events\/(\d{4}-\d{2}-\d{2})[-/]/.exec(b.pathname);
       if (!m) continue;
       const day = m[1];
       if (!byDay.has(day)) byDay.set(day, []);

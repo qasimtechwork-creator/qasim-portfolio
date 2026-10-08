@@ -1,8 +1,11 @@
-import { put, list, get } from '@vercel/blob';
+import { put } from '@vercel/blob';
 import crypto from 'crypto';
 
 // Receives lightweight analytics beacons from /assets/tracker.js.
-// Events are appended to one JSON file per day in Blob storage: events/YYYY-MM-DD-<rand>.json
+// OPTIMIZED 2026-10-07: single put() per event (1 Blob operation instead of 4+).
+// Each event is written as its own tiny file: events/YYYY-MM-DD/<random>.json
+// The stats reader (api/stats.js) already aggregates all files under events/ prefix,
+// so this append-only format is fully compatible.
 // Always answers 204 so tracking can never break the live site.
 
 const TYPES = new Set(['pv', 'click', 'play']);
@@ -20,11 +23,6 @@ export default async function handler(req, res) {
     if (ev && TYPES.has(ev.t)) {
       const now = new Date();
       const day = now.toISOString().slice(0, 10);
-      const prefix = `events/${day}-`;
-      const { blobs } = await list({ prefix });
-      let pathname = blobs.length
-        ? blobs[0].pathname
-        : `events/${day}-${crypto.randomBytes(4).toString('hex')}.json`;
       const ip = String(req.headers['x-forwarded-for'] || '').split(',')[0].trim();
       const ua = String(req.headers['user-agent'] || '').slice(0, 140);
       const visitor = crypto.createHash('sha256').update(`${ip}|${ua}|${day}`).digest('hex').slice(0, 16);
@@ -39,39 +37,13 @@ export default async function handler(req, res) {
         ctry: String(req.headers['x-vercel-ip-country'] || ''),
         v: visitor
       };
-      // Read-modify-write with verify-and-retry: Blob reads can lag a fresh write
-      // by a moment, so confirm the event actually landed and retry if it did not.
-      let stored = false;
-      for (let attempt = 0; attempt < 4 && !stored; attempt += 1) {
-        let events = [];
-        try {
-          const got = await get(pathname, { access: 'private' });
-          if (got && got.stream) {
-            const parsed = JSON.parse(await new Response(got.stream).text());
-            if (Array.isArray(parsed)) events = parsed;
-          }
-        } catch (e) { /* first write of the day */ }
-        if (events.some((e) => e.eid === record.eid)) {
-          stored = true;
-          break;
-        }
-        events.push(record);
-        if (events.length > 30000) events = events.slice(-30000);
-        await put(pathname, JSON.stringify(events), {
-          access: 'private',
-          addRandomSuffix: false,
-          allowOverwrite: true,
-          contentType: 'application/json'
-        });
-        try {
-          const check = await get(pathname, { access: 'private' });
-          if (check && check.stream) {
-            const arr = JSON.parse(await new Response(check.stream).text());
-            if (Array.isArray(arr) && arr.some((e) => e.eid === record.eid)) stored = true;
-          }
-        } catch (e) { /* verify again next attempt */ }
-        if (!stored) await new Promise((r) => setTimeout(r, 600 * (attempt + 1)));
-      }
+      // Single operation: write this event as its own file. No list, no read, no verify.
+      const pathname = `events/${day}/${record.eid}.json`;
+      await put(pathname, JSON.stringify([record]), {
+        access: 'private',
+        addRandomSuffix: false,
+        contentType: 'application/json'
+      });
     }
   } catch (e) {
     // Swallow: analytics must never affect the site.

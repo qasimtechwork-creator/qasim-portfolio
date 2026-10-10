@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-10T06:44:14.741325+00:00",
+  "generatedAt": "2026-10-10T14:52:55.841187+00:00",
   "videos": [
     {
       "id": "DeRRHFmJ8Mc",
@@ -444,6 +444,11 @@
       "path": "/assets/articles/best-ai-tools-2026.html"
     },
     {
+      "slug": "best-ai-tools-for-youtube-creators-2026",
+      "title": "Best AI Tools for YouTube Creators in 2026: Editing, SEO and Growth",
+      "path": "/assets/articles/best-ai-tools-for-youtube-creators-2026.html"
+    },
+    {
       "slug": "best-ai-tools-for-youtubers",
       "title": "7 Best AI Tools for YouTubers in 2026",
       "path": "/assets/articles/best-ai-tools-for-youtubers.html"
@@ -487,6 +492,11 @@
       "slug": "free-ai-tools-creator-workflow-2026",
       "title": "From Idea to Published: A Complete Free AI Workflow for Creators in 2026",
       "path": "/assets/articles/free-ai-tools-creator-workflow-2026.html"
+    },
+    {
+      "slug": "free-ai-video-generator-without-watermark-2026",
+      "title": "Free AI Video Generator Without Watermark: 10 Best Tools in 2026",
+      "path": "/assets/articles/free-ai-video-generator-without-watermark-2026.html"
     },
     {
       "slug": "freelancer-ai-kit-free-tools-2026",
@@ -636,6 +646,6 @@
   ],
   "counts": {
     "videos": 45,
-    "articles": 45
+    "articles": 47
   }
 }

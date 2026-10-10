@@ -1,6 +1,15 @@
 {
-  "generatedAt": "2026-10-09T06:44:17.797765+00:00",
+  "generatedAt": "2026-10-10T06:20:59.797832+00:00",
   "videos": [
+    {
+      "id": "DeRRHFmJ8Mc",
+      "file": "reel-DeRRHFmJ8Mc.mp4",
+      "title": "Google SynthID: Detect AI-Generated Content",
+      "url": "https://www.instagram.com/reel/DeRRHFmJ8Mc/",
+      "likes": 1,
+      "comments": 0,
+      "created_at": "2026-10-09 03:14:57"
+    },
     {
       "id": "DeGs3CSBJWr",
       "file": "reel-DeGs3CSBJWr.mp4",
@@ -387,6 +396,15 @@
       "likes": 1,
       "comments": 0,
       "created_at": "2026-08-28 09:29:09"
+    },
+    {
+      "id": "DbhkO_thAz0",
+      "file": "reel-DbhkO_thAz0.mp4",
+      "title": "Google's 15 FREE AI Tools 🤯",
+      "url": "https://www.instagram.com/reel/DbhkO_thAz0/",
+      "likes": 14,
+      "comments": 0,
+      "created_at": "2026-08-01 21:36:38"
     }
   ],
   "articles": [
@@ -617,7 +635,7 @@
     }
   ],
   "counts": {
-    "videos": 43,
+    "videos": 45,
     "articles": 45
   }
 }

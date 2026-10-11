@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-11T06:44:04.724439+00:00",
+  "generatedAt": "2026-10-11T16:41:36.072435+00:00",
   "videos": [
     {
       "id": "DeRRHFmJ8Mc",
@@ -414,6 +414,11 @@
       "path": "/assets/articles/50-google-flow-commands.html"
     },
     {
+      "slug": "ai-automation-sleep-2026",
+      "title": "AI Automation in 2026: Get Work Done While You Sleep (Honest Guide)",
+      "path": "/assets/articles/ai-automation-sleep-2026.html"
+    },
+    {
       "slug": "ai-ugc-ads-2026",
       "title": "AI UGC Ads: Create &amp; Sell AI Video Ads (2026 Guide)",
       "path": "/assets/articles/ai-ugc-ads-2026.html"
@@ -459,9 +464,24 @@
       "path": "/assets/articles/best-free-ai-writing-tools-for-freelancers.html"
     },
     {
+      "slug": "build-ai-agents-free-2026",
+      "title": "3 Free AI Tools to Build AI Agents Fast (No Coding Needed)",
+      "path": "/assets/articles/build-ai-agents-free-2026.html"
+    },
+    {
       "slug": "chatgpt-vs-claude-vs-gemini-which-ai-to-use",
       "title": "ChatGPT vs Claude vs Gemini (2026): Best AI by Task",
       "path": "/assets/articles/chatgpt-vs-claude-vs-gemini-which-ai-to-use.html"
+    },
+    {
+      "slug": "claude-prompt-to-video-2026",
+      "title": "Claude Opus 5.5: Turn One Prompt Into a Full Motion-Graphics Video",
+      "path": "/assets/articles/claude-prompt-to-video-2026.html"
+    },
+    {
+      "slug": "claude-token-limits-2026",
+      "title": "Claude Token Limits Explained: Stop Wasting Time in 2026",
+      "path": "/assets/articles/claude-token-limits-2026.html"
     },
     {
       "slug": "click-booster-kit-free-ai-tools-thumbnails-titles-video-ideas-2026",
@@ -484,6 +504,11 @@
       "path": "/assets/articles/five-free-ai-tools.html"
     },
     {
+      "slug": "flashlight-photo-trend-2026",
+      "title": "Viral AI Flashlight Photo Trend: Free Gemini Prompt (2026)",
+      "path": "/assets/articles/flashlight-photo-trend-2026.html"
+    },
+    {
       "slug": "free-ai-tools-2026",
       "title": "Best Free AI Tools for Content Creators in 2026",
       "path": "/assets/articles/free-ai-tools-2026.html"
@@ -504,6 +529,11 @@
       "path": "/assets/articles/freelancer-ai-kit-free-tools-2026.html"
     },
     {
+      "slug": "google-synthid-detect-ai-content-2026",
+      "title": "Google SynthID: How to Detect AI-Generated Content in 2026",
+      "path": "/assets/articles/google-synthid-detect-ai-content-2026.html"
+    },
+    {
       "slug": "hardest-part-content-consistency-system-2026",
       "title": "Why Consistency Is the Hardest Part of Creating Content (And the System That Fixes It)",
       "path": "/assets/articles/hardest-part-content-consistency-system-2026.html"
@@ -512,6 +542,11 @@
       "slug": "hidden-gems-free-ai-apps-creators-2026",
       "title": "Hidden Gems: 8 Free AI Apps Most Creators Have Never Tried in 2026",
       "path": "/assets/articles/hidden-gems-free-ai-apps-creators-2026.html"
+    },
+    {
+      "slug": "higgsfield-alternative-2026",
+      "title": "Best Higgsfield Alternatives: 1 Free AI Tool That Replaces Them All (2026)",
+      "path": "/assets/articles/higgsfield-alternative-2026.html"
     },
     {
       "slug": "how-much-does-youtube-thumbnail-cost",
@@ -552,6 +587,16 @@
       "slug": "look-professional-free-ai-tools-2026",
       "title": "How to Look Professional with Free AI Tools",
       "path": "/assets/articles/look-professional-free-ai-tools-2026.html"
+    },
+    {
+      "slug": "make-money-ai-videos-2026",
+      "title": "How to Make Money With AI Videos in 2026 (Beginner Guide)",
+      "path": "/assets/articles/make-money-ai-videos-2026.html"
+    },
+    {
+      "slug": "meta-muse-ai-tasks-2026",
+      "title": "Meta Muse AI: The AI Agent That Does Tasks For You (2026 Guide)",
+      "path": "/assets/articles/meta-muse-ai-tasks-2026.html"
     },
     {
       "slug": "my-daily-ai-stack-free-tools-content-business-2026",
@@ -609,6 +654,11 @@
       "path": "/assets/articles/video-editing-tips-beginners.html"
     },
     {
+      "slug": "viral-ai-dance-videos-gemini-omni-2026",
+      "title": "How to Create Viral AI Dance Videos with Google Gemini Omni (Free Tutorial)",
+      "path": "/assets/articles/viral-ai-dance-videos-gemini-omni-2026.html"
+    },
+    {
       "slug": "which-ai-tool-saves-creators-most-time-2026",
       "title": "Which AI Tool Saves Creators the Most Time in 2026? An Honest Comparison",
       "path": "/assets/articles/which-ai-tool-saves-creators-most-time-2026.html"
@@ -646,6 +696,6 @@
   ],
   "counts": {
     "videos": 45,
-    "articles": 47
+    "articles": 57
   }
 }

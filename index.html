@@ -567,6 +567,21 @@
     .faq-item .faq-a{padding:0 24px 22px;color:var(--muted);font-size:15.5px;line-height:1.7}
     .faq-item .faq-a strong{color:var(--ink)}
     @media(max-width:900px){.t-grid,.cs-grid{grid-template-columns:1fr}.num-grid{grid-template-columns:repeat(2,1fr)}.wa-float{width:50px;height:50px;bottom:74px}}
+    /* ===== 3D upgrade 2026-10-12: tilt + glare + hero orbs ===== */
+    .hero-orb{position:absolute;border-radius:50%;filter:blur(70px);opacity:.55;pointer-events:none;z-index:1;animation:orbFloat 14s ease-in-out infinite}
+    .hero-orb.orb-a{width:340px;height:340px;left:-90px;top:6%;background:radial-gradient(circle,rgba(230,198,127,.32),transparent 70%)}
+    .hero-orb.orb-b{width:300px;height:300px;right:-80px;bottom:4%;background:radial-gradient(circle,rgba(200,60,90,.26),transparent 70%);animation-duration:18s;animation-delay:-6s}
+    .hero-orb.orb-c{width:200px;height:200px;left:36%;top:-70px;background:radial-gradient(circle,rgba(120,140,255,.20),transparent 70%);animation-duration:11s;animation-delay:-3s}
+    @keyframes orbFloat{0%,100%{transform:translate3d(0,0,0)}50%{transform:translate3d(26px,-32px,0)}}
+    [data-tilt]{transform-style:preserve-3d;will-change:transform}
+    .showreel-frame{transition:transform .3s ease}
+    .showreel-frame::after{content:"";position:absolute;inset:0;z-index:3;pointer-events:none;opacity:0;transition:opacity .3s;background:radial-gradient(circle at var(--gx,50%) var(--gy,50%),rgba(255,255,255,.20),transparent 55%)}
+    .cs-card{transition:transform .3s,border-color .3s,box-shadow .3s}
+    [data-tilt].tilting{transition:transform .12s ease-out,border-color .3s,box-shadow .3s}
+    .cs-card.tilting{box-shadow:0 30px 70px rgba(0,0,0,.5)}
+    .service{transition:padding-left .25s,background .25s,box-shadow .25s}
+    .service:hover{background:rgba(230,198,127,.05);box-shadow:inset 3px 0 0 var(--gold-bright)}
+    @media(prefers-reduced-motion:reduce){.hero-orb{animation:none;display:none}[data-tilt]{transform:none!important}}
 </style>
 </head>
 <body>
@@ -606,6 +621,7 @@
   <main>
     <header class="hero wrap" id="home">
       <canvas class="hero-canvas" id="hero-canvas" aria-hidden="true"></canvas>
+      <span class="hero-orb orb-a" aria-hidden="true"></span><span class="hero-orb orb-b" aria-hidden="true"></span><span class="hero-orb orb-c" aria-hidden="true"></span>
       <div class="hero-bismillah" lang="ar">بِسْمِ اللهِ الرَّحْمٰنِ الرَّحِيْمِ</div>
       <div class="hero-copy reveal">
         <div class="eyebrow">Creative intelligence, made visible</div>
@@ -629,7 +645,7 @@
 
     <section class="showreel" aria-label="Showreel 2026">
       <div class="wrap">
-        <div class="showreel-frame reveal">
+        <div class="showreel-frame reveal" data-tilt="6">
           <span class="showreel-tag">Showreel 2026</span>
           <video autoplay muted loop playsinline preload="auto" poster="assets/videos/showreel-poster.jpg" aria-label="Qasim Kayani 2026 showreel: a 30 second compilation of AI video work">
             <source src="assets/videos/showreel-2026.mp4" type="video/mp4">
@@ -1267,7 +1283,7 @@
       <div class="wrap">
         <div class="section-head reveal"><div class="section-index">Case Studies</div><h2 id="cs-title">Work that <em>shipped.</em></h2></div>
         <div class="cs-grid">
-          <article class="cs-card reveal">
+          <article class="cs-card reveal" data-tilt="4">
             <div class="cs-kicker">Affiliate Website · SEO Build</div>
             <h3>QA Affiliate — 6,805-Product Catalog</h3>
             <div class="cs-row"><h4>The problem</h4><p>Needed a fast, search-visible product catalog monetized with real affiliate links — not a slow page everyone bounces from.</p></div>
@@ -1275,7 +1291,7 @@
             <div class="cs-row"><h4>The result</h4><p>6,805 live products, every link verified, sitemap accepted in Search Console with zero errors.</p></div>
             <a class="cs-link" href="https://qa-affiliate.vercel.app" target="_blank" rel="noopener noreferrer">Visit live site ↗</a>
           </article>
-          <article class="cs-card reveal">
+          <article class="cs-card reveal" data-tilt="4">
             <div class="cs-kicker">Content Website · Technical SEO</div>
             <h3>EventBuzz — 156-Article Event Hub</h3>
             <div class="cs-row"><h4>The problem</h4><p>Thin seasonal content, a harmful ad script on 11 pages, 4,746 redirecting internal links and keyword cannibalization across 39 articles.</p></div>
@@ -1283,7 +1299,7 @@
             <div class="cs-row"><h4>The result</h4><p>156 articles, 167 clean sitemap URLs, zero duplicate titles or metas, every page returning HTTP 200.</p></div>
             <a class="cs-link" href="https://eventbuzz-sigma.vercel.app" target="_blank" rel="noopener noreferrer">Visit live site ↗</a>
           </article>
-          <article class="cs-card reveal">
+          <article class="cs-card reveal" data-tilt="4">
             <div class="cs-kicker">AI Video · Content System</div>
             <h3>Reels-to-Articles Traffic Engine</h3>
             <div class="cs-row"><h4>The problem</h4><p>Social videos earned views but sent almost no traffic to the portfolio website.</p></div>
@@ -3038,7 +3054,7 @@
           </div>
         </div>
         <div class="direct-contact-grid reveal" aria-label="Direct contact options">
-          <!-- TODO: replace href="#" with Qasim's real WhatsApp link (e.g. https://wa.me/92XXXXXXXXXX) -->
+          <!-- WhatsApp links wired via WHATSAPP_NUMBER in the inline script below -->
           <a class="social direct-contact-card whatsapp-card" href="#" aria-label="Chat with Qasim Kayani on WhatsApp"><span><b>WhatsApp</b><br><small>Chat directly — fastest reply</small></span><svg class="contact-brand-icon" viewbox="0 0 24 24" aria-hidden="true"><path fill="#25d366" d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm0 18.2a8.2 8.2 0 0 1-4.2-1.1l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2zm4.6-6.1c-.3-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4 0-.5.1-.7l.4-.5c.1-.2.1-.3 0-.5L9.6 8.2c-.1-.3-.3-.3-.5-.3h-.4c-.2 0-.5.2-.7.3-.9.9-1.1 2.2-.2 3.9a11.6 11.6 0 0 0 4.5 4.2c1.7.8 2.4.9 3.2.7.5-.1 1.5-.6 1.7-1.2.2-.6.2-1.1.1-1.2 0-.1-.2-.1-.5-.2z"/></svg></a>
           <a class="social direct-contact-card gmail-card" href="mailto:qasimtechwork@gmail.com"><span><b>Gmail</b><br><small>qasimtechwork@gmail.com</small></span><svg class="contact-brand-icon" viewbox="0 0 32 32" aria-hidden="true"><rect x="3" y="6" width="26" height="20" rx="3" style="fill:#fff;stroke:none"></rect><path d="M4.5 9v15" style="fill:none;stroke:#4285F4;stroke-width:3.4;stroke-linecap:round"></path><path d="M27.5 9v15" style="fill:none;stroke:#34A853;stroke-width:3.4;stroke-linecap:round"></path><path d="M5 8l11 8 11-8" style="fill:none;stroke:#EA4335;stroke-width:3.4;stroke-linecap:round;stroke-linejoin:round"></path><path d="M5 24h7" style="fill:none;stroke:#C5221F;stroke-width:3.4;stroke-linecap:round"></path><path d="M20 24h7" style="fill:none;stroke:#FBBC04;stroke-width:3.4;stroke-linecap:round"></path></svg></a>
         </div>
@@ -3071,12 +3087,45 @@
   </div>
   <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Enlarged project image" aria-hidden="true"><button class="lightbox-close" type="button" aria-label="Close enlarged image">×</button><img id="lightbox-image" alt="" loading="lazy" decoding="async"></div>
   <button class="back-top" id="back-top" type="button" aria-label="Back to top">↑</button>
-  <!-- TODO: replace href="#" with Qasim's real WhatsApp link (e.g. https://wa.me/92XXXXXXXXXX) -->
+  <!-- WhatsApp links wired via WHATSAPP_NUMBER in the inline script below -->
   <a class="wa-float" id="wa-float" href="#" aria-label="Chat with Qasim Kayani on WhatsApp"><svg viewbox="0 0 24 24" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm0 18.2a8.2 8.2 0 0 1-4.2-1.1l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2zm4.6-6.1c-.3-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4 0-.5.1-.7l.4-.5c.1-.2.1-.3 0-.5L9.6 8.2c-.1-.3-.3-.3-.5-.3h-.4c-.2 0-.5.2-.7.3-.9.9-1.1 2.2-.2 3.9a11.6 11.6 0 0 0 4.5 4.2c1.7.8 2.4.9 3.2.7.5-.1 1.5-.6 1.7-1.2.2-.6.2-1.1.1-1.2 0-.1-.2-.1-.5-.2z"/></svg></a>
 
   <script>
     (function(){
       var reduceMotion=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+      /* ===== WhatsApp number (single source of truth) =====
+         Qasim ka WhatsApp number: country code ke saath, "+" ke baghair.
+         Khali string ("") chhorne par WhatsApp float button aur contact card nazar NAHIN aayenge. */
+      var WHATSAPP_NUMBER="923135531925";
+      (function wireWhatsApp(){
+        var floatBtn=document.getElementById('wa-float');
+        var card=document.querySelector('.whatsapp-card');
+        if(WHATSAPP_NUMBER){
+          var link="https://wa.me/"+String(WHATSAPP_NUMBER).replace(/\D/g,"");
+          [floatBtn,card].forEach(function(a){if(a){a.href=link;a.target="_blank";a.rel="noopener"}});
+        }else{
+          if(floatBtn)floatBtn.style.display="none";
+          if(card)card.style.display="none";
+        }
+      })();
+
+      /* ===== 3D tilt (fine pointer only; touch devices skip) ===== */
+      if(!reduceMotion&&window.matchMedia('(hover:hover) and (pointer:fine)').matches){
+        document.querySelectorAll('[data-tilt]').forEach(function(el){
+          var max=parseFloat(el.getAttribute('data-tilt'))||6;
+          el.addEventListener('mousemove',function(e){
+            var r=el.getBoundingClientRect();
+            var px=(e.clientX-r.left)/r.width-0.5,py=(e.clientY-r.top)/r.height-0.5;
+            el.style.transform='perspective(1000px) rotateX('+(-py*max).toFixed(2)+'deg) rotateY('+(px*max).toFixed(2)+'deg)';
+            el.style.setProperty('--gx',((px+0.5)*100).toFixed(1)+'%');
+            el.style.setProperty('--gy',((py+0.5)*100).toFixed(1)+'%');
+            el.classList.add('tilting');
+          });
+          el.addEventListener('mouseleave',function(){el.style.transform='';el.classList.remove('tilting')});
+        });
+      }
+
       var preloader=document.getElementById('preloader');
       function finishLoading(){preloader.classList.add('done')}
       window.addEventListener('load',function(){window.setTimeout(finishLoading,reduceMotion?0:450)});window.setTimeout(finishLoading,1800);

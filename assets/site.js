@@ -35,7 +35,7 @@
 
       var preloader=document.getElementById('preloader');
       function finishLoading(){if(preloader){preloader.classList.add('done')}}
-      window.addEventListener('load',function(){window.setTimeout(finishLoading,reduceMotion?0:450)});window.setTimeout(finishLoading,1800);
+      if(document.readyState!=='loading'){finishLoading()}else{document.addEventListener('DOMContentLoaded',function(){window.setTimeout(finishLoading,reduceMotion?0:150)})}window.setTimeout(finishLoading,1200);
 
       function scrollToTarget(target){if(!target)return;target.scrollIntoView({behavior:reduceMotion?'auto':'smooth',block:'start'})}
       document.querySelectorAll('a[href^="#"]').forEach(function(anchor){anchor.addEventListener('click',function(e){var selector=anchor.getAttribute('href');if(!selector||selector==='#')return;var target=document.querySelector(selector);if(!target)return;e.preventDefault();scrollToTarget(target);if(history.replaceState)history.replaceState(null,'',selector)})});

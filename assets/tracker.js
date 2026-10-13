@@ -3,7 +3,12 @@
    No cookies, no personal data; purely anonymous counts. */
 (function () {
   var EP = '/api/track';
+  /* Usage guard (2026-10-13): skip bots + 20% sampling to stay inside Vercel free tier. */
+  var _ua = navigator.userAgent || '';
+  if (/bot|crawl|spider|slurp|mediapartners|baidu|yandex|sogou|exabot|facebot|ia_archiver|headless|phantom/i.test(_ua)) return;
+  var _sample = 0.2;
   function send(d) {
+    if (Math.random() >= _sample) return;
     try {
       var body = JSON.stringify(d);
       if (navigator.sendBeacon) {

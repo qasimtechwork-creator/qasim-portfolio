@@ -553,11 +553,7 @@
     .faq-item .faq-a strong{color:var(--ink)}
     @media(max-width:900px){.t-grid,.cs-grid{grid-template-columns:1fr}.num-grid{grid-template-columns:repeat(2,1fr)}.wa-float{width:50px;height:50px;bottom:74px}}
     /* ===== 3D upgrade 2026-10-12: tilt + glare + hero orbs ===== */
-    .hero-orb{position:absolute;border-radius:50%;filter:blur(70px);opacity:.55;pointer-events:none;z-index:1;animation:orbFloat 14s ease-in-out infinite}
-    .hero-orb.orb-a{width:340px;height:340px;left:-90px;top:6%;background:radial-gradient(circle,rgba(230,198,127,.32),transparent 70%)}
-    .hero-orb.orb-b{width:300px;height:300px;right:-80px;bottom:4%;background:radial-gradient(circle,rgba(200,60,90,.26),transparent 70%);animation-duration:18s;animation-delay:-6s}
-    .hero-orb.orb-c{width:200px;height:200px;left:36%;top:-70px;background:radial-gradient(circle,rgba(120,140,255,.20),transparent 70%);animation-duration:11s;animation-delay:-3s}
-    @keyframes orbFloat{0%,100%{transform:translate3d(0,0,0)}50%{transform:translate3d(26px,-32px,0)}}
+    
     [data-tilt]{transform-style:preserve-3d;will-change:transform}
     .showreel-frame{transition:transform .3s ease}
     .showreel-frame::after{content:"";position:absolute;inset:0;z-index:3;pointer-events:none;opacity:0;transition:opacity .3s;background:radial-gradient(circle at var(--gx,50%) var(--gy,50%),rgba(255,255,255,.20),transparent 55%)}
@@ -566,7 +562,6 @@
     .cs-card.tilting{box-shadow:0 30px 70px rgba(0,0,0,.5)}
     .service{transition:padding-left .25s,background .25s,box-shadow .25s}
     .service:hover{background:rgba(230,198,127,.05);box-shadow:inset 3px 0 0 var(--gold-bright)}
-    @media(prefers-reduced-motion:reduce){.hero-orb{animation:none;display:none}[data-tilt]{transform:none!important}}
 
     /* ===== Clean 3D brand logos, no boxes (2026-10-13) ===== */
     .brand-dock{display:flex;gap:30px;flex-wrap:wrap;margin-top:30px;align-items:center}

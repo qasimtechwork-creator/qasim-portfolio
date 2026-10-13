@@ -1,43 +1,12 @@
-/* Qasim Kayani portfolio — lightweight analytics beacon.
-   Sends pageviews, link clicks and video plays to /api/track.
-   No cookies, no personal data; purely anonymous counts. */
+/* Qasim Kayani portfolio — analytics beacon (DISABLED 2026-10-13).
+   The per-pageview/click/play POSTs to /api/track were each a Vercel
+   serverless invocation plus a Blob write, and burned through the Hobby
+   plan's 2,000 monthly Advanced Requests — the account was due to pause
+   on 2026-10-14. Tracking is switched off so the sites stay live on the
+   free quota. The admin panel, /api/track and all historical stats in the
+   Blob store are untouched; only new events stop arriving. Re-enable by
+   restoring the beacon version from git history once a free off-Vercel
+   analytics option (e.g. Cloudflare Web Analytics) is in place. */
 (function () {
-  var EP = '/api/track';
-  function send(d) {
-    try {
-      var body = JSON.stringify(d);
-      if (navigator.sendBeacon) {
-        navigator.sendBeacon(EP, new Blob([body], { type: 'application/json' }));
-      } else if (window.fetch) {
-        fetch(EP, { method: 'POST', body: body, headers: { 'Content-Type': 'application/json' }, keepalive: true }).catch(function () {});
-      }
-    } catch (e) { /* never break the page */ }
-  }
-
-  send({ t: 'pv', p: location.pathname, r: document.referrer || '' });
-
-  document.addEventListener('click', function (e) {
-    var a = e.target && e.target.closest ? e.target.closest('a') : null;
-    if (a && a.href) {
-      var label = (a.getAttribute('aria-label') || a.textContent || '').replace(/\s+/g, ' ').trim().slice(0, 80);
-      send({ t: 'click', p: location.pathname, u: a.href, l: label });
-    }
-  }, true);
-
-  function bindVideos(scope) {
-    (scope || document).querySelectorAll('video').forEach(function (v) {
-      if (v.dataset.qtrk) return;
-      v.dataset.qtrk = '1';
-      v.addEventListener('play', function () {
-        if (v.dataset.qplayed) return;
-        v.dataset.qplayed = '1';
-        send({ t: 'play', p: location.pathname, u: v.getAttribute('src') || '', l: (v.getAttribute('aria-label') || '').slice(0, 120) });
-      });
-    });
-  }
-  if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', function () { bindVideos(document); });
-  } else {
-    bindVideos(document);
-  }
+  window.__qtrk_disabled = true;
 })();

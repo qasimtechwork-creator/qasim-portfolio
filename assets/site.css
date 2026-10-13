@@ -61,8 +61,8 @@
     .portrait-tag{position:absolute;right:0;bottom:12%;background:var(--surface);border:1px solid var(--line);padding:12px 16px;font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;box-shadow:var(--shadow)}
     @keyframes spin{to{transform:rotate(360deg)}}
     .marquee{overflow:hidden;border-block:1px solid var(--line);background:var(--surface);transform:rotate(-1deg);width:102%;margin-left:-1%;}
-    .marquee-track{width:max-content;display:flex;gap:42px;padding:13px 0;animation:marquee 28s linear infinite;font-family:"Barlow Condensed",sans-serif;font-weight:600;letter-spacing:.12em;text-transform:uppercase}
-    .marquee-track span:after{content:"◆";color:var(--crimson);margin-left:42px;font-size:9px}
+    .marquee-track{width:max-content;display:flex;padding:13px 0;animation:marquee 28s linear infinite;font-family:"Barlow Condensed",sans-serif;font-weight:600;letter-spacing:.12em;text-transform:uppercase}
+    .marquee-track span{padding-right:42px}.marquee-track span:after{content:"◆";color:var(--crimson);margin-left:42px;font-size:9px}
     @keyframes marquee{to{transform:translateX(-50%)}}
     section{padding-top:clamp(80px,10vw,150px);padding-bottom:clamp(80px,10vw,150px)}
     .section-head{display:grid;grid-template-columns:120px 1fr;gap:24px;align-items:end;margin-bottom:clamp(42px,6vw,80px)}

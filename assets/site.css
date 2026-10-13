@@ -540,7 +540,10 @@
     .wa-float{position:fixed;right:20px;bottom:78px;z-index:95;width:56px;height:56px;border-radius:50%;background:#25d366;display:grid;place-items:center;box-shadow:0 10px 30px rgba(37,211,102,.45);transition:transform .25s}
     .wa-float:hover{transform:scale(1.1)}
     .wa-float svg{width:30px;height:30px;fill:#fff}
-    .faq-list{max-width:860px;margin:0 auto;display:grid;gap:14px}
+    .faq-list{max-width:1120px;margin:0 auto;display:grid;gap:14px;grid-template-columns:1fr 1fr;align-items:start}
+    @media(max-width:760px){.faq-list{grid-template-columns:1fr}}
+    details.faq-item[open] .faq-a{animation:faqIn .18s ease-out}
+    @keyframes faqIn{from{opacity:0;transform:translateY(-6px)}to{opacity:1;transform:none}}
     .faq-item{border:1px solid var(--line);border-radius:14px;background:var(--surface);overflow:hidden}
     .faq-item summary{cursor:pointer;list-style:none;display:flex;justify-content:space-between;align-items:center;gap:16px;padding:20px 24px;font-weight:700;font-size:17px;color:var(--ink)}
     .faq-item summary::-webkit-details-marker{display:none}

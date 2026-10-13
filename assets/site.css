@@ -571,6 +571,7 @@
     /* ===== 3D realistic brand dock (2026-10-13) ===== */
     .brand-dock{display:flex;gap:16px;flex-wrap:wrap;margin-top:26px}
     .brand-btn{width:68px;height:68px;border-radius:18px;display:grid;place-items:center;background:linear-gradient(145deg,#222229,#0f0f13);border:1px solid var(--line);box-shadow:0 10px 26px rgba(0,0,0,.45),inset 0 1px 0 rgba(255,255,255,.09);transition:border-color .3s,box-shadow .3s}
-    .brand-btn img{width:32px;height:32px;display:block;filter:drop-shadow(0 4px 10px rgba(0,0,0,.55))}
-    .brand-btn:hover{border-color:color-mix(in srgb,var(--gold) 55%,var(--line));box-shadow:0 20px 44px rgba(0,0,0,.55),0 0 26px color-mix(in srgb,var(--gold) 22%,transparent),inset 0 1px 0 rgba(255,255,255,.12)}
+    .brand-btn img{width:38px;height:38px;display:block;filter:drop-shadow(0 4px 10px rgba(0,0,0,.55)) brightness(1.05);transition:filter .3s,transform .3s}
+    .brand-btn:hover{border-color:color-mix(in srgb,var(--gold) 60%,var(--line));box-shadow:0 22px 48px rgba(0,0,0,.6),0 0 30px color-mix(in srgb,var(--gold) 30%,transparent),inset 0 2px 0 rgba(255,255,255,.16),inset 0 -3px 8px rgba(0,0,0,.4)}
+    .brand-btn:hover img{filter:drop-shadow(0 6px 14px rgba(0,0,0,.6)) brightness(1.35)}
     @media(prefers-reduced-motion:reduce){.brand-btn{transition:none}}

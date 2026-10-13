@@ -33,8 +33,10 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700;800&amp;family=Manrope:wght@400;500;600;700&amp;family=Noto+Naskh+Arabic:wght@500;600;700&amp;display=swap" rel="stylesheet">
 
-  <link rel="stylesheet" href="assets/site.css?v=20261013r">
+  <link rel="stylesheet" href="assets/site.min.css?v=20261013seo">
   
+
+  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "How much does video editing cost?", "acceptedAnswer": {"@type": "Answer", "text": "$10–$15 per YouTube video, depending on length and complexity — captions, effects, sound design and color included. Thumbnails are $10 each for YouTube, Instagram and TikTok. Bigger jobs (brand packages, UGC ads, full websites) get a custom quote after a short brief."}}, {"@type": "Question", "name": "How long does delivery take?", "acceptedAnswer": {"@type": "Answer", "text": "Most single videos and thumbnails are delivered within 1–3 days; larger packages depend on scope and are agreed before work starts. (Confirm typical timelines with Qasim when you order.) Need it faster? Ask about rush delivery."}}, {"@type": "Question", "name": "How many revisions do I get?", "acceptedAnswer": {"@type": "Answer", "text": "Every project includes revisions until you're happy with the final cut — the goal is a video you're proud to publish, not a delivery count. (Confirm the revision policy for your package when you order.)"}}, {"@type": "Question", "name": "What do you need from me to start?", "acceptedAnswer": {"@type": "Answer", "text": "Just three things: 1) your raw footage or topic, 2) one or two reference videos you like, 3) your logo/brand colors if you have them. Everything else — script polish, visuals, captions, sound — is handled for you."}}, {"@type": "Question", "name": "How does your AI video process work?", "acceptedAnswer": {"@type": "Answer", "text": "Concept first, then AI generation with tools like Google Flow and Veo, then a full professional edit in CapCut Pro — transitions, kinetic captions, sound effects and pacing tuned for retention. Your face, voice and brand stay exactly as they are; the AI builds around you, never over you."}}, {"@type": "Question", "name": "Do you also design thumbnails?", "acceptedAnswer": {"@type": "Answer", "text": "Yes — thumbnail design is a core service at $10 per thumbnail for YouTube (16:9), Instagram (4:5) and TikTok (9:16). Every design respects the platform's safe zones so nothing important gets cropped, and text is kept short and clickable."}}]}</script>
 </head>
 <body>
   <div class="preloader" id="preloader" aria-hidden="true"><div class="preloader-inner"><div class="preloader-mark"><img src="assets/qa-brand-logo-3d-transparent.webp" alt="" decoding="async" fetchpriority="high"></div><div class="bismillah" lang="ar">بِسْمِ اللهِ الرَّحْمٰنِ الرَّحِيْمِ</div></div></div>
@@ -112,23 +114,28 @@
     <section id="testimonials" aria-labelledby="testimonials-title">
       <div class="wrap">
         <div class="section-head reveal"><div class="section-index">Client Words</div><h2 id="testimonials-title">What clients <em>say.</em></h2></div>
-        <!-- PLACEHOLDER TESTIMONIALS: no verified client review texts were found in the repo/workspace.
-             Needed from Qasim: 3 real review texts + client names (e.g. Fiverr buyer reviews). Replace the t-slot cards below. -->
+        <!-- PLACEHOLDER TESTIMONIALS: schema.org Review microdata is in place (itemscope/itemprop).
+             Needed from Qasim: 3 real review texts + client names (e.g. Fiverr buyer reviews).
+             To activate: replace the t-quote text and the b[itemprop=name] with real client name.
+             Do NOT add fake reviews to JSON-LD — only real verified reviews. -->
         <div class="t-grid">
-          <article class="t-card t-slot reveal" data-tilt="4">
-            <div class="t-stars" aria-label="5 out of 5 stars">★★★★★</div>
-            <p class="t-quote">Your first client review will appear here — send Qasim your feedback after your project.</p>
-            <div class="t-who"><span class="t-ava">?</span><div><b>Awaiting review</b><small>Client name — Service</small></div></div>
+          <article class="t-card t-slot reveal" data-tilt="4" itemscope itemtype="https://schema.org/Review">
+            <div class="t-stars" aria-label="5 out of 5 stars" itemprop="reviewRating" itemscope itemtype="https://schema.org/Rating"><meta itemprop="ratingValue" content="5"><meta itemprop="bestRating" content="5">★★★★★</div>
+            <p class="t-quote" itemprop="reviewBody">Your first client review will appear here — send Qasim your feedback after your project.</p>
+            <div class="t-who" itemprop="author" itemscope itemtype="https://schema.org/Person"><span class="t-ava">?</span><div><b itemprop="name">Awaiting review</b><small>Client name — Service</small></div></div>
+            <meta itemprop="itemReviewed" content="Qasim Kayani video editing services">
           </article>
-          <article class="t-card t-slot reveal" data-tilt="4">
-            <div class="t-stars" aria-label="5 out of 5 stars">★★★★★</div>
-            <p class="t-quote">Your second client review will appear here — send Qasim your feedback after your project.</p>
-            <div class="t-who"><span class="t-ava">?</span><div><b>Awaiting review</b><small>Client name — Service</small></div></div>
+          <article class="t-card t-slot reveal" data-tilt="4" itemscope itemtype="https://schema.org/Review">
+            <div class="t-stars" aria-label="5 out of 5 stars" itemprop="reviewRating" itemscope itemtype="https://schema.org/Rating"><meta itemprop="ratingValue" content="5"><meta itemprop="bestRating" content="5">★★★★★</div>
+            <p class="t-quote" itemprop="reviewBody">Your second client review will appear here — send Qasim your feedback after your project.</p>
+            <div class="t-who" itemprop="author" itemscope itemtype="https://schema.org/Person"><span class="t-ava">?</span><div><b itemprop="name">Awaiting review</b><small>Client name — Service</small></div></div>
+            <meta itemprop="itemReviewed" content="Qasim Kayani video editing services">
           </article>
-          <article class="t-card t-slot reveal" data-tilt="4">
-            <div class="t-stars" aria-label="5 out of 5 stars">★★★★★</div>
-            <p class="t-quote">Your third client review will appear here — send Qasim your feedback after your project.</p>
-            <div class="t-who"><span class="t-ava">?</span><div><b>Awaiting review</b><small>Client name — Service</small></div></div>
+          <article class="t-card t-slot reveal" data-tilt="4" itemscope itemtype="https://schema.org/Review">
+            <div class="t-stars" aria-label="5 out of 5 stars" itemprop="reviewRating" itemscope itemtype="https://schema.org/Rating"><meta itemprop="ratingValue" content="5"><meta itemprop="bestRating" content="5">★★★★★</div>
+            <p class="t-quote" itemprop="reviewBody">Your third client review will appear here — send Qasim your feedback after your project.</p>
+            <div class="t-who" itemprop="author" itemscope itemtype="https://schema.org/Person"><span class="t-ava">?</span><div><b itemprop="name">Awaiting review</b><small>Client name — Service</small></div></div>
+            <meta itemprop="itemReviewed" content="Qasim Kayani video editing services">
           </article>
         </div>
       </div>

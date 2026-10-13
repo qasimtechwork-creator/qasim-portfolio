@@ -513,8 +513,13 @@
     .showreel-play:hover{transform:scale(1.08);background:rgba(10,10,12,.8)}
     .showreel-frame.is-playing .showreel-play{display:none}
     .t-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
-    .t-card{border:1px solid var(--line);border-radius:16px;background:var(--surface);padding:28px;display:flex;flex-direction:column;gap:14px;transition:transform .3s,border-color .3s}
-    .t-card:hover{transform:translateY(-6px);border-color:var(--gold-bright)}
+    .t-grid{perspective:1200px}
+    .t-card{border:1px solid var(--line);border-radius:16px;background:var(--surface);padding:28px;display:flex;flex-direction:column;gap:14px;transition:transform .45s cubic-bezier(.2,.7,.2,1),border-color .3s,box-shadow .45s;transform-style:preserve-3d;will-change:transform}
+    .t-card:hover{transform:translateY(-8px) rotateX(6deg) rotateY(-4deg) scale(1.02);border-color:var(--gold-bright);box-shadow:0 24px 48px -12px rgba(0,0,0,.55),0 0 0 1px var(--gold-bright),0 0 32px -8px var(--gold-bright)}
+    .t-card:hover .t-stars{transform:translateZ(30px)}
+    .t-card:hover .t-quote{transform:translateZ(20px)}
+    .t-card:hover .t-who{transform:translateZ(25px)}
+    .t-stars,.t-quote,.t-who{transition:transform .45s cubic-bezier(.2,.7,.2,1)}
     .t-stars{color:var(--gold-bright);letter-spacing:.2em;font-size:15px}
     .t-quote{color:var(--ink);font-size:16.5px;line-height:1.65;flex:1}
     .t-who{display:flex;align-items:center;gap:12px}

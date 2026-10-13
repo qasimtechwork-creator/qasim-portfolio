@@ -118,7 +118,7 @@
       if('IntersectionObserver' in window&&!reduceMotion){var observer=new IntersectionObserver(function(entries){entries.forEach(function(entry){if(entry.isIntersecting){entry.target.classList.add('visible');observer.unobserve(entry.target)}})},{threshold:.08});document.querySelectorAll('.reveal').forEach(function(el){observer.observe(el)})}else{document.querySelectorAll('.reveal').forEach(function(el){el.classList.add('visible')})}
 
       /* ===== Numbers bar: PLACEHOLDER STATS — Qasim to confirm the 4 real numbers ===== */
-      var SITE_STATS={projects:450,clients:55,years:5,videos:900};
+      var SITE_STATS={projects:450,clients:380,years:5,videos:900};
       (function(){var nums=document.querySelectorAll('.num-count');if(!nums.length)return;
         function animate(el,target){var start=null,dur=1400;function step(ts){if(!start)start=ts;var p=Math.min((ts-start)/dur,1),e=1-Math.pow(1-p,3);el.textContent=Math.round(target*e);if(p<1)requestAnimationFrame(step)}if(reduceMotion){el.textContent=target;return}requestAnimationFrame(step)}
         function run(){nums.forEach(function(el){var key=el.getAttribute('data-stat');if(SITE_STATS[key]!=null)animate(el,SITE_STATS[key])})}
